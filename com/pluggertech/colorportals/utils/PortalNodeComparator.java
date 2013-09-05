@@ -1,0 +1,12 @@
+package com.pluggertech.colorportals.utils;
+
+import java.util.Comparator;
+
+import com.pluggertech.colorportals.Portal;
+
+public class PortalNodeComparator implements Comparator<Portal>{
+	@Override
+    public int compare(Portal o1, Portal o2) {
+        return o1.getNode().compareTo(o2.getNode());
+    }
+}
