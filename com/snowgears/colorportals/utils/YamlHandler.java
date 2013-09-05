@@ -1,4 +1,4 @@
-package com.pluggertech.colorportals.utils;
+package com.snowgears.colorportals.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +8,8 @@ import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import com.pluggertech.colorportals.ColorPortals;
-import com.pluggertech.colorportals.Portal;
+import com.snowgears.colorportals.ColorPortals;
+import com.snowgears.colorportals.Portal;
 
 public class YamlHandler {
 	

@@ -1,10 +1,10 @@
-package com.pluggertech.colorportals.events;
+package com.snowgears.colorportals.events;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-import com.pluggertech.colorportals.Portal;
+import com.snowgears.colorportals.Portal;
 
 public class DestroyPortalEvent extends Event{
 

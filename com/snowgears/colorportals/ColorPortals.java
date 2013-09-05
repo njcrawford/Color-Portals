@@ -1,4 +1,4 @@
-package com.pluggertech.colorportals;
+package com.snowgears.colorportals;
 
 
 import java.io.File;
@@ -18,9 +18,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.pluggertech.colorportals.listeners.ColorListener;
-import com.pluggertech.colorportals.utils.Metrics;
-import com.pluggertech.colorportals.utils.YamlHandler;
+import com.snowgears.colorportals.listeners.ColorListener;
+import com.snowgears.colorportals.utils.Metrics;
+import com.snowgears.colorportals.utils.YamlHandler;
 
 public class ColorPortals extends JavaPlugin{
 	

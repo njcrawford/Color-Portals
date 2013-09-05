@@ -1,4 +1,4 @@
-package com.pluggertech.colorportals.utils;
+package com.snowgears.colorportals.utils;
 
 /*
  * Copyright 2011 Tyler Blair. All rights reserved.

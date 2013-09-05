@@ -1,4 +1,4 @@
-package com.pluggertech.colorportals.utils;
+package com.snowgears.colorportals.utils;
 
 import java.io.*;
 import java.lang.Runnable;

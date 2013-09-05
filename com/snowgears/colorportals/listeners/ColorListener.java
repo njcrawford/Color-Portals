@@ -1,4 +1,4 @@
-package com.pluggertech.colorportals.listeners;
+package com.snowgears.colorportals.listeners;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,12 +25,12 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Sign;
 
-import com.pluggertech.colorportals.ColorPortals;
-import com.pluggertech.colorportals.Portal;
-import com.pluggertech.colorportals.events.CreatePortalEvent;
-import com.pluggertech.colorportals.events.DestroyPortalEvent;
-import com.pluggertech.colorportals.utils.PortalNodeComparator;
-import com.pluggertech.colorportals.utils.SerializableLocation;
+import com.snowgears.colorportals.ColorPortals;
+import com.snowgears.colorportals.Portal;
+import com.snowgears.colorportals.events.CreatePortalEvent;
+import com.snowgears.colorportals.events.DestroyPortalEvent;
+import com.snowgears.colorportals.utils.PortalNodeComparator;
+import com.snowgears.colorportals.utils.SerializableLocation;
 
 
 public class ColorListener implements Listener{

@@ -1,11 +1,11 @@
-package com.pluggertech.colorportals;
+package com.snowgears.colorportals;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import org.bukkit.Location;
 
-import com.pluggertech.colorportals.utils.SerializableLocation;
+import com.snowgears.colorportals.utils.SerializableLocation;
 
 public class Portal implements Serializable{
 

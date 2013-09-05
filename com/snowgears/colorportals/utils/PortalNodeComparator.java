@@ -1,8 +1,8 @@
-package com.pluggertech.colorportals.utils;
+package com.snowgears.colorportals.utils;
 
 import java.util.Comparator;
 
-import com.pluggertech.colorportals.Portal;
+import com.snowgears.colorportals.Portal;
 
 public class PortalNodeComparator implements Comparator<Portal>{
 	@Override
