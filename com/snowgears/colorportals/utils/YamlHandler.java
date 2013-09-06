@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.bukkit.Location;
-import org.bukkit.configuration.file.FileConfiguration;
+//import org.bukkit.Location;
+//import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.snowgears.colorportals.ColorPortals;
