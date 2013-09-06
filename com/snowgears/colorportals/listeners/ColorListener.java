@@ -62,7 +62,8 @@ public class ColorListener implements Listener{
         {
             Sign s = (Sign)event.getBlock().getState().getData();
             Block attachedBlock = event.getBlock().getRelative(s.getAttachedFace());
-            if(attachedBlock.getType() == Material.WOOL && attachedBlock.getLocation().add(0, -3, 0).getBlock().getType() == Material.WOOL)
+            if((ColorPortals.useWoolBlocks && attachedBlock.getType() == Material.WOOL && attachedBlock.getLocation().add(0, -3, 0).getBlock().getType() == Material.WOOL)
+            		|| (ColorPortals.useLapisBlocks && attachedBlock.getType() == Material.LAPIS_BLOCK && attachedBlock.getLocation().add(0, -3, 0).getBlock().getType() == Material.LAPIS_BLOCK))
             {
                 if(ColorPortals.usePerms && !event.getPlayer().hasPermission("colorportals.create"))
                 {
@@ -191,7 +192,8 @@ public class ColorListener implements Listener{
         if(event.getBlock().getType() == Material.WALL_SIGN){
         	Sign s = (Sign)event.getBlock().getState().getData();
         	Block attachedBlock = event.getBlock().getRelative(s.getAttachedFace());
-        	if(attachedBlock.getType() != Material.WOOL)
+        	if((ColorPortals.useWoolBlocks && attachedBlock.getType() != Material.WOOL)
+        			&& (ColorPortals.useLapisBlocks && attachedBlock.getType() != Material.LAPIS_BLOCK))
         		return;
         	for(int i = 0; i < allPortals.size(); i++)
         		if(attachedBlock.getLocation().add(0, -2, 0).getBlock().getLocation().equals((allPortals.get(i)).getLocation()))
@@ -206,7 +208,8 @@ public class ColorListener implements Listener{
         			Bukkit.getServer().getPluginManager().callEvent(e);
             }
         }
-        else if(event.getBlock().getType() == Material.WOOL){
+        else if((ColorPortals.useWoolBlocks && event.getBlock().getType() == Material.WOOL)
+        		|| (ColorPortals.useLapisBlocks && event.getBlock().getType() == Material.LAPIS_BLOCK)){
         	Location loc = event.getBlock().getLocation();
         	Portal brokenPortal = null;
         	
@@ -255,7 +258,8 @@ public class ColorListener implements Listener{
         if( ! (event.getClickedBlock().getRelative(BlockFace.DOWN).getType() == Material.STONE_PLATE || event.getClickedBlock().getRelative(BlockFace.DOWN).getType() == Material.WOOD_PLATE))
             return;
         Block underPlate = event.getClickedBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN);
-        if(underPlate.getType() != Material.WOOL)
+        if((ColorPortals.useWoolBlocks && underPlate.getType() != Material.WOOL) 
+        		&& (ColorPortals.useLapisBlocks && underPlate.getType() != Material.LAPIS_BLOCK))
             return;
         Portal fromPortal = null;
         for(int i = 0; i < allPortals.size(); i++)
@@ -337,7 +341,8 @@ public class ColorListener implements Listener{
         if( ! (event.getBlock().getRelative(BlockFace.DOWN).getType() == Material.STONE_PLATE || event.getBlock().getRelative(BlockFace.DOWN).getType() == Material.WOOD_PLATE))
             return;
         Block underPlate = event.getBlock().getRelative(BlockFace.DOWN).getRelative(BlockFace.DOWN);
-        if(underPlate.getType() != Material.WOOL)
+        if((ColorPortals.useWoolBlocks && underPlate.getType() != Material.WOOL)
+        		&& (ColorPortals.useLapisBlocks && underPlate.getType() != Material.LAPIS_BLOCK))
             return;
         Portal fromPortal = null;
         for(int i = 0; i < allPortals.size(); i++)
@@ -549,6 +554,8 @@ public class ColorListener implements Listener{
 
     public String getColor(Block block)
     {
+    	if(ColorPortals.useLapisBlocks && block.getType() == Material.LAPIS_BLOCK)
+    		return "Lapis Lazuli";
         if(block.getType() != Material.WOOL)
             return "none";
         String returned = "none";

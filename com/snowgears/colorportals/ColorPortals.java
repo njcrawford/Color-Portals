@@ -33,6 +33,8 @@ public class ColorPortals extends JavaPlugin{
 	public static int maxPortalsPerGroup = 0;
 	public static int minDistance = 0;
 	public static int maxDistance = 0;
+	public static boolean useLapisBlocks = false;
+	public static boolean useWoolBlocks = true;
 	
 	public static HashMap<String, ArrayList<Portal>> portalMap = new HashMap<String, ArrayList<Portal>>();//string, all portals
 	
@@ -86,6 +88,14 @@ public class ColorPortals extends JavaPlugin{
 			maxPortalsPerGroup = 2;
 		minDistance = getConfig().getInt("minDistanceBetweenPortals");
 		maxDistance = getConfig().getInt("maxDistanceBetweenPortals");
+		useLapisBlocks = getConfig().getBoolean("useLapisBlocks");
+		useWoolBlocks = getConfig().getBoolean("useWoolBlocks");
+		// Must have either wool or lapis blocks enabled (enabling both is ok).
+		// Default to wool if neither is enabled.
+		if(!useLapisBlocks && !useWoolBlocks)
+		{
+			useWoolBlocks = true;
+		}
 	}
 	
 	public void onDisable(){
