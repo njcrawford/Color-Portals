@@ -303,8 +303,12 @@ public class ColorListener implements Listener{
                 {
                     if(entity.getLocation().getBlock().getLocation().equals(event.getClickedBlock().getRelative(BlockFace.DOWN).getLocation()))
                     {
-                        entity.teleport(adjustedLoc);
-                        entityCount++;
+                    	// Prevent teleporting entities to other worlds, since it doesn't seem to work right now
+                    	if(entity.getLocation().getWorld().equals(adjustedLoc.getWorld()))
+                    	{
+                    		entity.teleport(adjustedLoc);
+                    		entityCount++;
+                    	}
                     }
                 }
                 if(entityCount > 0){
@@ -359,11 +363,15 @@ public class ColorListener implements Listener{
             int entityCount = 0;
                 for(Entity entity : event.getEntity().getNearbyEntities(10, 10, 10))
                 {
-                    if(entity.getLocation().getBlock().getLocation().equals(event.getBlock().getRelative(BlockFace.DOWN).getLocation()))
-                    {
-                        entity.teleport(adjustedLoc);
-                        entityCount++;
-                    }
+                	// Prevent teleporting entities to other worlds, since it doesn't seem to work right now
+                	if(entity.getLocation().getWorld().equals(event.getBlock().getWorld()))
+                	{
+                		if(entity.getLocation().getBlock().getLocation().equals(event.getBlock().getRelative(BlockFace.DOWN).getLocation()))
+                		{
+                			entity.teleport(adjustedLoc);
+                			entityCount++;
+                		}
+                	}
                 }
                 if(entityCount > 0){
                 	event.getBlock().getWorld().playSound(event.getBlock().getLocation(), Sound.ENDERMAN_TELEPORT, 1.0F, 0.5F);
